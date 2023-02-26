@@ -21,8 +21,8 @@ namespace WeatherApp
         private void textBox1_TextChanged(object sender, System.EventArgs e)
         {
 
-            
-            
+            WeatherDataGrid.DataSource = _weather.Weathers.Where(u=>u.CityName.ToLower().Contains(textBox1.Text.ToLower())).ToList();
+
         }
         private void Search(object sender)
         { 
