@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp
 {
-    internal class City
+    class Patient
     {
         private string _name;
 
@@ -10,7 +10,7 @@
             private set => _name = value;
         }
 
-        public City(string name)
+        public Patient(string name)
         {
             _name = name;
         }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace WeatherApp
 {
-    public class WeatherDatabase
+    public class PatientDatabase
     {
         private Random _random = new Random();
-        private int RandomInt
+        private double RandomInt
         {
-            get => _random.Next(-30, 61);
+            get => _random.Next(35, 40)+Math.Round(_random.NextDouble(),1);
         }
         internal List<Weather> Weathers { get; private set; }
 
@@ -16,15 +16,15 @@ namespace WeatherApp
         {
             Weathers = new List<Weather>
             {
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Абакан")),
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Черногорск")),
-                new Weather(RandomInt, MeasureUnits.Fahrenheit, new City("Минусинск")),
-                new Weather(RandomInt, MeasureUnits.Kelvin, new City("Сорск")),
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Абаза")),
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Аскиз")),
-                new Weather(RandomInt, MeasureUnits.Kelvin, new City("Боград")),
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Таштып")),
-                new Weather(RandomInt, MeasureUnits.Celsius, new City("Копьёво"))
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Костя")),
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Миша")),
+                new Weather(RandomInt, MeasureUnits.Fahrenheit, new Patient("Слава")),
+                new Weather(RandomInt, MeasureUnits.Kelvin, new Patient("Даниил")),
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Настя")),
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Оля")),
+                new Weather(RandomInt, MeasureUnits.Kelvin, new Patient("Коля")),
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Саша")),
+                new Weather(RandomInt, MeasureUnits.Celsius, new Patient("Артём"))
             };
         }
     }

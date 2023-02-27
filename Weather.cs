@@ -9,11 +9,11 @@
 
     internal class Weather
     {
-        private int _temperature;
+        private double _temperature;
         private MeasureUnits _measureUnit = MeasureUnits.Celsius;
-        private City _city;
+        private Patient _patient;
 
-        public int Temperature
+        public double Temperature
         {
             get => _temperature;
         }
@@ -23,21 +23,21 @@
             get => _measureUnit;
         }
 
-        private City City
+        private Patient Patient
         {
-            get => _city;
+            get => _patient;
         }
 
-        public string CityName
+        public string PatientName
         {
-            get { return City != null ? City.Name : "Не назначено"; }
+            get { return Patient != null ? Patient.Name : "Не назначено"; }
         }
 
-        public Weather(int temperature, MeasureUnits measureUnit, City city)
+        public Weather(double temperature, MeasureUnits measureUnit, Patient city)
         {
             _temperature = temperature;
             _measureUnit = measureUnit;
-            _city = city;
+            _patient = city;
         }
 
 

@@ -6,13 +6,13 @@ namespace WeatherApp
 {
     public partial class WeatherForm : Form
     {
-        private WeatherDatabase _weather;
+        private PatientDatabase _weather;
 
         public WeatherForm()
         {
             InitializeComponent();
 
-            _weather = new WeatherDatabase();
+            _weather = new PatientDatabase();
             _weather.Initialize();
 
             WeatherDataGrid.DataSource = _weather.Weathers.ToList();
@@ -21,7 +21,7 @@ namespace WeatherApp
         private void textBox1_TextChanged(object sender, System.EventArgs e)
         {
 
-            WeatherDataGrid.DataSource = _weather.Weathers.Where(u=>u.CityName.ToLower().Contains(textBox1.Text.ToLower())).ToList();
+            WeatherDataGrid.DataSource = _weather.Weathers.Where(u=>u.PatientName.ToLower().Contains(textBox1.Text.ToLower())).ToList();
 
         }
         private void Search(object sender)
